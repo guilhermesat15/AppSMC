@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppSMC.Views.EvaluationDisciplineDetailPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Padding="40,20,-5,10">
+                <Frame CornerRadius="10" HorizontalOptions="FillAndExpand" VerticalOptions="Start" HasShadow="True" Padding="0">
+                    <StackLayout BackgroundColor="#e5e5e5" Padding="10" HorizontalOptions="FillAndExpand">
+                        <Label x:Name="lblEvaluationDisciplineDate" 
+                                            LineBreakMode="HeadTruncation"
+                                            FontSize="12" 
+                                           TextColor="#293846"/>
+                        <Label x:Name="lblDisciplineName" 
+                                            LineBreakMode="HeadTruncation"
+                                            FontSize="14" 
+                                           TextColor="#293846" FontAttributes="Bold"/>
+                        <Label x:Name="lblAttempt" 
+                                            LineBreakMode="HeadTruncation"
+                                            FontSize="12" 
+                                           TextColor="#293846" />
+                        <Label x:Name="lblCountDayExpire"
+                                            LineBreakMode="HeadTruncation"
+                                            FontSize="12" 
+                                           TextColor="#293846" />
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="FillAndExpand">
+                <ListView x:Name="EvaluationRegisterListView" RowHeight="80" SeparatorColor="#e5e5e5">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+
+                                <Grid Padding="5,10,5,10" ColumnSpacing="0">
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2.5*" />
+                                        <ColumnDefinition Width="7.5*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid.RowDefinitions>
+                                        <!-- Define as linhas -->
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <StackLayout Grid.Column="0" WidthRequest="20" Padding="5">
+                                        <Label Text="01" 
+                                                LineBreakMode="HeadTruncation"
+                                                FontSize="26" 
+                                                TextColor="#293846" 
+                                                HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+
+                                        <Label Text="Attempt" 
+                                                LineBreakMode="HeadTruncation"
+                                                FontSize="12" 
+                                                TextColor="#293846" 
+                                                HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                                    </StackLayout>
+
+                                    <StackLayout Grid.Column="1" Padding="5"  HorizontalOptions="FillAndExpand">
+                                        <Label Text="{Binding EvaluationDisciplineDate, StringFormat='Date of Realization: {0:dd/MM/yyyy}'}" 
+                                                LineBreakMode="HeadTruncation"
+                                                FontSize="12" 
+                                                TextColor="#838486" />
+                                        <Label Text="{Binding EvaluationDisciplineDate, StringFormat='{0:T}'}" 
+                                                LineBreakMode="HeadTruncation"
+                                                FontSize="12" 
+                                                TextColor="#838486" />
+                                    </StackLayout>
+
+                                </Grid>
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <StackLayout Padding="20,20,20,20">
+                <Button Text="ACCOMPLISH ATTEMPT"
+                BackgroundColor="#1CC09F"
+                TextColor="#ffffff"
+                BorderRadius="10"
+                HorizontalOptions="Center"/>
+            </StackLayout>
+            
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

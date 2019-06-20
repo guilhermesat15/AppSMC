@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppSMC.Views.ClassesDetailPage">
+    
+
+    <ContentPage.Content>
+
+        <ScrollView Padding="10">
+        <StackLayout Spacing="20" Padding="15">
+            <Label x:Name="NameCourse" Text="O gerente de projeto II" FontSize="14" TextColor="#838486" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="Center" />
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" HeightRequest="230" BackgroundColor="#000">
+                    <WebView x:Name="webView" WidthRequest="1000" HeightRequest="1000" />
+            </StackLayout>
+
+            <Button Text="DOWNLOAD CLASSROOM MATERIALS"
+                    x:Name="btnDownloadClass"
+                    BackgroundColor="#1CC09F"
+                    TextColor="#ffffff"
+                    BorderRadius="10"
+                    HorizontalOptions="Center"
+                    Clicked="btnDownloadClass_Clicked"/>
+        </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

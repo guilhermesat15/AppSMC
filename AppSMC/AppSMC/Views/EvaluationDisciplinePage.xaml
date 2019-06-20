@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppSMC.Views.EvaluationDisciplinePage">
+    <ContentPage.Content>
+        <StackLayout Spacing="20" Padding="40,10,-5,10">
+
+                <ListView x:Name="EvaluationListView"
+                ItemSelected="OnEvaluationSelected" RowHeight="120" SeparatorColor="transparent">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <Grid  Padding="0,10,-5,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="10*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Frame CornerRadius="10" HorizontalOptions="FillAndExpand" VerticalOptions="Start" HasShadow="True" Padding="0">
+                                    <StackLayout Grid.Column="0" BackgroundColor="#e5e5e5" Padding="10" HorizontalOptions="FillAndExpand">
+                                        <Label Text="{Binding EvaluationDisciplineDate, StringFormat='{0:MMMM dd, yyyy}'}}" 
+                                        LineBreakMode="HeadTruncation"
+                                        FontSize="12" 
+                                       TextColor="#293846" />
+                                        <Label Text="{Binding EvaluationName}" 
+                                        LineBreakMode="HeadTruncation"
+                                        FontSize="14" 
+                                       TextColor="#293846" FontAttributes="Bold"/>
+                                        <Label Text="{Binding DisciplineName}" 
+                                        LineBreakMode="HeadTruncation"
+                                        FontSize="12" 
+                                       TextColor="#293846" />
+                                        <Label Text="{Binding Attempt, StringFormat='Tentativa:0/{0}     Em aberto'}"
+                                        LineBreakMode="HeadTruncation"
+                                        FontSize="12" 
+                                       TextColor="#293846" />
+                                    </StackLayout>
+                                </Frame>
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

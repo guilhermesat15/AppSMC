@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppSMC.Views.MessageUserDetailPage">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout Orientation="Horizontal" Spacing="10" Padding="20,10,20,0">
+                <StackLayout HorizontalOptions="Start">
+                    <Image Source="iconPerson.png" VerticalOptions="Center" WidthRequest="60" HeightRequest="60"></Image>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" >
+                    <Label x:Name="txtTitle" FontAttributes="Bold" TextColor="#838486" FontSize="14" LineBreakMode="NoWrap" />
+                    <Label x:Name="txtText" TextColor="#838486" FontSize="12" LineBreakMode="NoWrap" />
+                </StackLayout>
+                <StackLayout HorizontalOptions="End" >
+                    <Label x:Name="txtDate" FontSize="12" LineBreakMode="HeadTruncation" />
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Padding="20,0,20,0">
+                <Image BackgroundColor="#838486" HorizontalOptions="FillAndExpand" HeightRequest="2"></Image>
+            </StackLayout>
+
+            <StackLayout Spacing="10" Padding="20,10,20,10">
+                <Label x:Name="txtDetailText" LineBreakMode="WordWrap" FontSize="14" TextColor="#838486" HorizontalTextAlignment="Start" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

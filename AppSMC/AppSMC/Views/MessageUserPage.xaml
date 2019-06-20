@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppSMC.Views.MessageUserPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="MessageUserListView" Margin="20,20,20,20" ItemSelected="OnMessageUserSelected" RowHeight="60">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid RowSpacing="0" Padding="5,5,5,5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.2*" />
+                                    <ColumnDefinition Width="0.5*" />
+                                    <ColumnDefinition Width="0.3*" />
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Grid.Column="0" Grid.RowSpan="2" HorizontalOptions="Center" VerticalOptions="Center">
+                                    <Image Source="iconPerson.png" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="40" HeightRequest="40"></Image>
+                                </StackLayout>
+                                <Label Grid.Column="1" Grid.Row="0" Text="{Binding MessageUserTitle}" FontAttributes="Bold" FontSize="14" LineBreakMode="NoWrap" />
+                                <Label Grid.Column="1" Grid.Row="1" Text="{Binding MessageUserText}" FontSize="12" LineBreakMode="WordWrap" />
+                                <Label Grid.Column="2" Text="{Binding MessageUserDate, StringFormat='{0:dd/MM/yyyy}'}" FontSize="12" HorizontalTextAlignment="Center" LineBreakMode="HeadTruncation" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

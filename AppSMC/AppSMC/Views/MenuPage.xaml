@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppSMC.Views.MenuPage"
+             Title="Menu">
+
+    <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="#1AB394">
+
+        <StackLayout BackgroundColor="#e7eaec"
+                     HeightRequest="150">
+            <ImageButton Source="iconPerson.png"
+                    HorizontalOptions="Center" WidthRequest="120" HeightRequest="120" Padding="10" />
+            <Label Text="Guilherme Lopes Sathler" FontSize="Medium" HorizontalOptions="Center" ></Label>
+        </StackLayout>
+
+        <ListView x:Name="ListViewMenu"
+                  RowHeight="60"
+                  SeparatorVisibility="None"
+                  BackgroundColor="#e7eaec">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+                        <!-- Main design for our menu items -->
+                        <StackLayout VerticalOptions="FillAndExpand"
+                             Orientation="Horizontal"
+                             Padding="20,10,0,10"
+                             Spacing="20">
+
+                            <Image Source="{Binding IconTitle}"
+                         WidthRequest="40"
+                         HeightRequest="40"
+                         VerticalOptions="Center" />
+
+                            <Label Text="{Binding Title}"
+                         FontSize="Medium"
+                         VerticalOptions="Center"
+                         TextColor="#2F4050"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        
+    </StackLayout>
+
+</ContentPage>

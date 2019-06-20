@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppSMC.Views.FinancialPage">
+    <ContentPage.Content>
+        <StackLayout Spacing="20">
+            <StackLayout Padding="40,20,-5,10">
+                <Frame CornerRadius="10" HorizontalOptions="FillAndExpand" VerticalOptions="Start" HasShadow="True" Padding="0">
+                    <StackLayout WidthRequest="40"  Spacing="0" Orientation="Horizontal" >
+
+                        <StackLayout HeightRequest="90" WidthRequest="60" Padding="5,20,5,5" BackgroundColor="#1CC09F" HorizontalOptions="Center" VerticalOptions="FillAndExpand">
+                            <Label Text="19" 
+                                            LineBreakMode="NoWrap"
+                                            FontSize="26"
+                                            FontAttributes="Bold"
+                                            TextColor="#FFF" 
+                                            HorizontalTextAlignment="Center" />
+
+                            <Label Text="Jan" 
+                                            LineBreakMode="NoWrap"
+                                            FontSize="12" 
+                                            FontAttributes="Bold"
+                                            TextColor="#FFF" 
+                                            HorizontalTextAlignment="Center" />
+                        </StackLayout>
+                        <StackLayout HeightRequest="90" Padding="5,5,5,5" BackgroundColor="#1CC09F" HorizontalOptions="FillAndExpand">
+                            <Label Text="Courso : Mensalidade" 
+                                            LineBreakMode="HeadTruncation"
+                                            FontSize="12" 
+                                           TextColor="#FFF" />
+                            <Label Text="£990.00" 
+                                            LineBreakMode="HeadTruncation"
+                                            FontSize="14"
+                                            FontAttributes="Bold"
+                                           TextColor="#FFF" />
+                            <Label Text="Status: Em Aberto" 
+                                            LineBreakMode="HeadTruncation"
+                                            FontSize="12" 
+                                           TextColor="#FFF" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+
+            <ListView x:Name="FinancialListView"
+                VerticalOptions="FillAndExpand"
+                ItemSelected="OnFinancialSelected" RowHeight="90" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <Grid Padding="10,10,0,10" ColumnSpacing="0">
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1.5*" />
+                                    <ColumnDefinition Width="6*" />
+                                    <ColumnDefinition Width="2.5*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <!-- Define as linhas -->
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <StackLayout Grid.Column="0" WidthRequest="20" Padding="5">
+                                    <Label Text="19" 
+                                        LineBreakMode="HeadTruncation"
+                                        FontSize="26" 
+                                        TextColor="#293846" 
+                                        FontAttributes="Bold"
+                                        HorizontalTextAlignment="Center" />
+
+                                    <Label Text="Jan" 
+                                        LineBreakMode="NoWrap"
+                                        FontSize="12" 
+                                        TextColor="#293846"
+                                        FontAttributes="Bold"
+                                        HorizontalTextAlignment="Center" />
+                                </StackLayout>
+
+                                <StackLayout Grid.Column="1" Padding="5"  HorizontalOptions="FillAndExpand">
+                                    <Label Text="Class" 
+                                        LineBreakMode="HeadTruncation"
+                                        FontSize="12" 
+                                        TextColor="#000" />
+                                    <Label Text="{Binding FinancialPortion, StringFormat='Mensalidade {0}'}" 
+                                        LineBreakMode="HeadTruncation"
+                                        FontSize="12" 
+                                        TextColor="#000" />
+                                    <Label Text="{Binding Situation, StringFormat='Status {0}'}" 
+                                        LineBreakMode="HeadTruncation"
+                                        FontSize="12" 
+                                        TextColor="#000"/>
+                                </StackLayout>
+
+                                <StackLayout Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center">
+                                    <Label Text="{Binding FinancialValue, StringFormat='£{0}'}" 
+                                        LineBreakMode="HeadTruncation"
+                                        FontSize="19" 
+                                        TextColor="#000"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"/>
+                                </StackLayout>
+
+                            </Grid>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
